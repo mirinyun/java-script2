@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-
+    //확인 버튼 가져오기
+    const bt = document.querySelector("button");
+    const radios = document.querySelectorAll("input[type = radio]");
+    bt.addEventListener("click", ()=> {
+        for(let item of radios) {
+            if(item.checked) {
+                console.log(item.value);
+                //문자를 숫자로 변환
+                dice2(parseInt(item.value));
+                //foreach()sms break구문 안됨
+                break;
+            }
+        }
+    })
 });
 //주사위 보기
 const dice = () => {
@@ -17,16 +30,16 @@ const dice = () => {
     adiv.innerHTML = `<img src='./img/${n}.png'>` ;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    //버튼 가져오기
-    const bts = document.querySelectorAll("button");
-    bts.forEach((item) => {
-        item.addEventListener("click", ()=> {
-            //문자를 숫자로
-            dice2(parseInt(item.textContent));
-        })
-    })
-})
+// document.addEventListener("DOMContentLoaded", () => {
+//     //버튼 가져오기
+//     const bts = document.querySelectorAll("button");
+//     bts.forEach((item) => {
+//         item.addEventListener("click", ()=> {
+//             //문자를 숫자로
+//             dice2(parseInt(item.textContent));
+//         })
+//     })
+// })
 //버튼 클릭시 주사위 보기
 const dice2 = (seln) => {
     //주사위 숫자 1~6
