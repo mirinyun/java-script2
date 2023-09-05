@@ -17,16 +17,19 @@ const dice = () => {
     adiv.innerHTML = `<img src='./img/${n}.png'>` ;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    //버튼 가져오기
-    const bts = document.querySelectorAll("button");
-    bts.forEach((item) => {
-        item.addEventListener("click", ()=> {
-            //문자를 숫자로
-            dice2(parseInt(item.textContent));
-        })
+
+//버튼 가져오기
+const bts = document.querySelectorAll("button");
+console.log(bts);
+
+//각버튼에 이벤트 달기
+bts.forEach((item) => {
+    item.addEventListener("click", () => {
+
     })
 })
+
+
 //버튼 클릭시 주사위 보기
 const dice2 = (seln) => {
     //주사위 숫자 1~6
@@ -44,3 +47,5 @@ const dice2 = (seln) => {
     else h2.textContent = "틀림(패)";
 
 }
+
+//온클릭하기<button id="bt1" onclick="dice2(1);">1</button>
